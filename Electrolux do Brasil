@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ficha Técnica – Electrolux</title>
+
+  <style>
+    :root{
+      --bg:#eef1f4;
+      --card:#ffffff;
+      --text:#111827;
+      --muted:#6b7280;
+      --line:#e5e7eb;
+      --head1:#0f172a;
+      --head2:#1f2937;
+      --shadow:0 18px 45px rgba(0,0,0,.18);
+      --radius:20px;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      background:var(--bg);
+      font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial,Helvetica,sans-serif;
+      color:var(--text);
+    }
+
+    .wrap{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:24px;
+    }
+
+    .card{
+      width:100%;
+      max-width:860px;
+      background:var(--card);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+
+    .header{
+      display:flex;
+      align-items:center;
+      gap:18px;
+      padding:26px 26px;
+      background:linear-gradient(135deg,var(--head1),var(--head2));
+      color:#fff;
+    }
+
+    .logoBox{
+      width:76px;
+      height:76px;
+      background:#fff;
+      border-radius:18px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      overflow:hidden;
+      flex:0 0 auto;
+    }
+
+    .logoBox img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+    }
+
+    .title{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+    }
+
+    .title h1{
+      margin:0;
+      font-size:clamp(18px,2.8vw,28px);
+      line-height:1.15;
+      font-weight:850;
+      letter-spacing:.2px;
+    }
+
+    .title p{
+      margin:0;
+      font-size:clamp(12px,2vw,14px);
+      opacity:.9;
+    }
+
+    .body{
+      padding:26px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+    }
+
+    .panel{
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:#fafafa;
+      padding:16px;
+    }
+
+    .panel h2{
+      margin:0 0 12px 0;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:1px;
+      color:#374151;
+      font-weight:800;
+    }
+
+    .row{
+      display:grid;
+      grid-template-columns: 220px 1fr;
+      gap:12px;
+      padding:12px 0;
+      border-bottom:1px dashed #d1d5db;
+      align-items:start;
+    }
+
+    .row:last-child{border-bottom:none}
+
+    .label{
+      color:#374151;
+      font-weight:800;
+    }
+
+    .value{
+      color:#111827;
+      word-break:break-word;
+      font-weight:600;
+    }
+
+    .note{
+      margin-top:16px;
+      padding:14px 16px;
+      border-left:4px solid #2563eb;
+      border-radius:14px;
+      background:#f3f4f6;
+      color:#374151;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    .footer{
+      padding:16px 22px;
+      background:#f9fafb;
+      border-top:1px solid var(--line);
+      color:var(--muted);
+      font-size:13px;
+      text-align:center;
+    }
+
+    @media (max-width:820px){
+      .grid{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      .value{font-weight:700}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <main class="card" role="main" aria-label="Ficha técnica del producto">
+
+      <header class="header">
+        <div class="logoBox" title="Electrolux">
+          <!-- TU IMAGEN (la que me pasaste) -->
+          <img
+            src="https://1.bp.blogspot.com/-wXS3O9Ii1rk/XzX9ooFqw2I/AAAAAAAAAMs/hlzXnxKXtiwf5Rl09xYu4wmoy-b-4CofwCLcBGAsYHQ/s1840/ELECTROLUX%2BWHITE.jpg"
+            alt="Electrolux"
+          />
+        </div>
+
+        <div class="title">
+          <h1>Ficha Técnica del Producto</h1>
+          <p>Información de identificación y fabricación (editable)</p>
+        </div>
+      </header>
+
+      <section class="body">
+        <div class="grid">
+
+          <section class="panel" aria-label="Identificación">
+            <h2>Identificación</h2>
+
+            <div class="row">
+              <div class="label">Marca</div>
+              <div class="value">Electrolux</div>
+            </div>
+
+            <div class="row">
+              <div class="label">Modelo</div>
+              <div class="value">EMT86910AX</div>
+            </div>
+
+            <div class="row">
+              <div class="label">Categoría</div>
+              <div class="value">Refrigerador</div>
+            </div>
+
+            <div class="row">
+              <div class="label">Capacidad</div>
+              <div class="value">469 L</div>
+            </div>
+          </section>
+
+          <section class="panel" aria-label="Fabricación">
+            <h2>Fabricación</h2>
+
+            <div class="row">
+              <div class="label">País de fabricación</div>
+              <div class="value">Brasil</div>
+            </div>
+
+            <div class="row">
+              <div class="label">Año de fabricación</div>
+              <div class="value">2025</div>
+            </div>
+
+            <div class="row">
+              <div class="label">Número de serie</div>
+              <div class="value">SN-0000000000</div>
+            </div>
+
+            <div class="row">
+              <div class="label">Lote</div>
+              <div class="value">L-001</div>
+            </div>
+          </section>
+
+        </div>
+
+        <div class="note">
+          <strong>Tip:</strong> Para editar, solo cambia los valores (Electrolux, EMT86910AX, 2025, etc.)
+          dentro de las cajas de la derecha. El diseño se mantiene igual.
+        </div>
+      </section>
+
+      <footer class="footer">
+        Página ideal para enlazar con QR (no vence mientras exista esta URL).
+      </footer>
+
+    </main>
+  </div>
+</body>
+</html>
