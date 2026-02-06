@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Certificado de Autenticidad y Garantía - Electrolux" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Certificado de Autenticidad - Electrolux</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -18,470 +17,298 @@
       --elx-gray:#E1E5EA;
       --elx-text:#1F2933;
       --elx-green:#2BB673;
-      --white:#ffffff;
     }
 
     *{margin:0;padding:0;box-sizing:border-box}
 
     body{
-      font-family:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-family:'Inter',sans-serif;
       background:var(--elx-gray-light);
       min-height:100vh;
       display:flex;
-      align-items:center;
       justify-content:center;
-      padding:30px 15px;
+      align-items:center;
+      padding:24px;
       color:var(--elx-text);
     }
 
-    .certificate-wrapper{
+    .certificate{
       width:100%;
       max-width:980px;
-    }
-
-    .certificate{
-      background:var(--white);
-      box-shadow:0 10px 40px rgba(0,0,0,.10);
+      background:#fff;
+      border-radius:16px;
+      box-shadow:0 14px 40px rgba(0,0,0,.12);
       overflow:hidden;
-      border-radius:14px;
-      position:relative;
     }
 
     /* HEADER */
     .cert-header{
-      background:linear-gradient(135deg,var(--elx-blue) 0%, var(--elx-blue-dark) 100%);
-      padding:48px 50px 40px;
+      background:linear-gradient(135deg,var(--elx-blue),var(--elx-blue-dark));
+      padding:48px 40px 42px;
+      text-align:center;
       position:relative;
-      overflow:hidden;
-    }
-
-    .cert-header::after{
-      content:'';
-      position:absolute;
-      top:0;right:0;
-      width:420px;height:100%;
-      background:linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.08) 100%);
-      pointer-events:none;
     }
 
     .brand-header{
       display:flex;
-      align-items:center;
       justify-content:center;
       margin-bottom:22px;
-      position:relative;
-      z-index:1;
     }
 
-    /* Logo real: debe existir en el repo como archivo */
+    /* LOGO REAL ELECTROLUX */
     .electrolux-logo{
       max-width:320px;
       width:100%;
       height:auto;
-      filter: brightness(0) invert(1); /* lo vuelve blanco */
-      display:block;
+      filter:brightness(0) invert(1);
     }
 
     .cert-type{
-      text-align:center;
-      color:rgba(255,255,255,.82);
       font-size:12px;
-      text-transform:uppercase;
       letter-spacing:3px;
-      font-weight:600;
+      text-transform:uppercase;
+      color:rgba(255,255,255,.8);
       margin-bottom:10px;
-      position:relative;
-      z-index:1;
+      font-weight:600;
     }
 
-    .cert-main-title{
-      text-align:center;
-      color:var(--white);
+    .cert-title{
       font-size:34px;
       font-weight:500;
-      letter-spacing:.5px;
-      margin-bottom:10px;
-      position:relative;
-      z-index:1;
+      color:#fff;
+      margin-bottom:12px;
     }
 
     .cert-subtitle{
-      text-align:center;
-      color:rgba(255,255,255,.90);
-      font-size:14px;
-      font-weight:400;
-      line-height:1.6;
       max-width:720px;
       margin:0 auto;
-      position:relative;
-      z-index:1;
+      font-size:14px;
+      line-height:1.6;
+      color:rgba(255,255,255,.9);
     }
 
-    .verification-badge{
+    .verified-badge{
       position:absolute;
-      top:28px;
-      right:34px;
-      width:86px;height:86px;
-      background:var(--elx-green);
+      top:24px;
+      right:28px;
+      width:86px;
+      height:86px;
       border-radius:50%;
+      background:var(--elx-green);
+      color:#fff;
       display:flex;
       flex-direction:column;
       align-items:center;
       justify-content:center;
-      box-shadow:0 10px 26px rgba(43,182,115,.35);
-      color:var(--white);
-      border:3px solid rgba(255,255,255,.25);
-      z-index:2;
+      font-weight:700;
+      box-shadow:0 8px 24px rgba(43,182,115,.45);
     }
 
-    .badge-check{
+    .verified-badge span{
       font-size:34px;
       line-height:1;
-      margin-bottom:4px;
-      font-weight:700;
     }
 
-    .badge-label{
+    .verified-badge small{
       font-size:9px;
-      text-transform:uppercase;
       letter-spacing:1px;
-      font-weight:700;
+      margin-top:4px;
     }
 
-    /* CUERPO */
-    .cert-body{padding:42px 50px}
-
-    .section-header{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      margin-bottom:22px;
-      padding-bottom:14px;
-      border-bottom:2px solid var(--elx-gray);
-    }
-
-    .section-icon{
-      width:6px;height:26px;
-      background:var(--elx-blue);
-      border-radius:3px;
+    /* BODY */
+    .cert-body{
+      padding:42px 40px;
     }
 
     .section-title{
       font-size:12px;
-      color:var(--elx-blue);
       text-transform:uppercase;
-      letter-spacing:2.2px;
-      font-weight:800;
+      letter-spacing:2px;
+      font-weight:700;
+      color:var(--elx-blue);
+      border-left:4px solid var(--elx-blue);
+      padding-left:12px;
+      margin-bottom:24px;
     }
 
-    .data-grid{
+    .grid{
       display:grid;
       grid-template-columns:repeat(2,1fr);
       gap:22px 34px;
-      margin-bottom:34px;
     }
 
-    .data-item{
-      display:flex;
-      flex-direction:column;
-      gap:8px;
-    }
-
-    .data-label{
+    .item label{
       font-size:11px;
-      color:#66717a;
       text-transform:uppercase;
-      letter-spacing:1.2px;
-      font-weight:700;
+      letter-spacing:1px;
+      color:#6b7280;
+      font-weight:600;
     }
 
-    .data-value{
-      font-size:15px;
-      color:var(--elx-text);
-      font-weight:600;
-      padding:12px 16px;
+    .item div{
+      margin-top:6px;
       background:var(--elx-gray-light);
+      padding:12px 16px;
       border-left:4px solid var(--elx-blue);
       border-radius:0 8px 8px 0;
+      font-size:15px;
+      font-weight:600;
     }
 
-    /* SECCIÓN DESTACADA */
-    .highlight-section{
-      background:linear-gradient(135deg,#ffffff 0%, var(--elx-gray-light) 50%, #ffffff 100%);
-      padding:40px 50px;
+    /* HIGHLIGHT */
+    .highlight{
+      background:linear-gradient(135deg,#fff,var(--elx-gray-light),#fff);
+      padding:36px 40px;
       border-top:1px solid var(--elx-gray);
       border-bottom:1px solid var(--elx-gray);
     }
 
-    .serial-container{
-      background:#fff;
-      border:2px dashed var(--elx-blue);
+    .serial{
+      margin-top:28px;
       padding:26px;
       text-align:center;
-      border-radius:10px;
-      margin-top:26px;
+      border:2px dashed var(--elx-blue);
+      border-radius:12px;
     }
 
-    .serial-label{
+    .serial small{
+      display:block;
+      margin-bottom:8px;
       font-size:11px;
-      color:#66717a;
-      text-transform:uppercase;
       letter-spacing:2px;
-      margin-bottom:10px;
-      font-weight:800;
+      color:#6b7280;
+      text-transform:uppercase;
+      font-weight:700;
     }
 
-    .serial-number{
+    .serial strong{
       font-size:24px;
-      color:var(--elx-blue);
-      font-weight:900;
       letter-spacing:3px;
-      font-family:'Courier New', monospace;
-    }
-
-    /* QR */
-    .qr-container{
-      display:flex;
-      align-items:center;
-      gap:22px;
-      margin-top:22px;
-      padding:20px;
-      background:#fff;
-      border-radius:10px;
-      border:1px solid var(--elx-gray);
-    }
-
-    .qr-code{
-      width:112px;height:112px;
-      border:2px solid var(--elx-gray);
-      border-radius:10px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      flex-shrink:0;
-      background:var(--elx-gray-light);
-      overflow:hidden;
-    }
-
-    /* Aquí pon tu QR real si quieres (imagen), por ahora patrón */
-    .qr-pattern{
-      width:92px;height:92px;
-      background-image:
-        linear-gradient(0deg, #cfd6dd 1px, transparent 1px),
-        linear-gradient(90deg, #cfd6dd 1px, transparent 1px);
-      background-size:10px 10px;
-      border-radius:6px;
-    }
-
-    .qr-title{
-      font-size:14px;
       color:var(--elx-blue);
-      font-weight:800;
-      margin-bottom:6px;
-    }
-
-    .qr-description{
-      font-size:13px;
-      color:#5f6b75;
-      line-height:1.6;
+      font-family:monospace;
     }
 
     /* FOOTER */
     .cert-footer{
       background:var(--elx-blue-dark);
-      color:var(--white);
-      padding:34px 50px;
+      padding:32px 40px;
       text-align:center;
+      color:#fff;
     }
 
-    .footer-logo{
-      font-size:16px;
-      letter-spacing:2px;
-      font-weight:700;
-      margin-bottom:10px;
-      opacity:.95;
-    }
-
-    .footer-text{
+    .cert-footer p{
       font-size:13px;
-      line-height:1.8;
       opacity:.9;
-      max-width:760px;
+      max-width:720px;
       margin:0 auto 10px;
+      line-height:1.7;
     }
 
-    .footer-contact{
-      font-size:12px;
-      opacity:.85;
-      margin-top:10px;
-    }
-
-    .footer-contact a{
-      color:var(--white);
+    .cert-footer a{
+      color:#fff;
       text-decoration:none;
       border-bottom:1px solid rgba(255,255,255,.35);
     }
-    .footer-contact a:hover{border-bottom-color:#fff}
 
-    /* RESPONSIVE */
-    @media (max-width:768px){
-      body{padding:18px 10px}
-      .cert-header{padding:36px 26px 30px}
-      .cert-body{padding:34px 26px}
-      .highlight-section{padding:34px 26px}
-      .cert-footer{padding:28px 26px}
-      .verification-badge{width:74px;height:74px;top:20px;right:20px}
-      .badge-check{font-size:30px}
-      .data-grid{grid-template-columns:1fr;gap:18px}
-      .cert-main-title{font-size:26px}
-      .electrolux-logo{max-width:260px}
-      .qr-container{flex-direction:column;text-align:center}
-    }
-
-    @media (max-width:480px){
-      body{padding:10px 8px}
-      .cert-header{padding:28px 18px 24px}
-      .cert-body{padding:26px 18px}
-      .highlight-section{padding:26px 18px}
-      .cert-footer{padding:24px 18px}
-      .cert-main-title{font-size:22px}
-      .cert-subtitle{font-size:13px}
-      .verification-badge{width:64px;height:64px}
-      .badge-check{font-size:26px}
-      .badge-label{font-size:8px}
-      .electrolux-logo{max-width:220px}
-      .serial-number{font-size:19px;letter-spacing:2px}
+    @media(max-width:768px){
+      .grid{grid-template-columns:1fr}
+      .cert-title{font-size:26px}
+      .electrolux-logo{max-width:240px}
     }
   </style>
 </head>
 
 <body>
-  <div class="certificate-wrapper">
-    <article class="certificate">
+  <article class="certificate">
 
-      <!-- HEADER -->
-      <header class="cert-header">
-        <div class="brand-header">
-          <!-- LOGO REAL: debe existir en tu repo -->
-          <img src="Electrolu_logo_PNG3.png" alt="Electrolux" class="electrolux-logo" />
-        </div>
-
-        <p class="cert-type">Documento Oficial</p>
-        <h2 class="cert-main-title">Certificado de Autenticidad</h2>
-        <p class="cert-subtitle">
-          Este documento certifica la autenticidad y garantía del producto Electrolux adquirido.
-          Respaldado por la herencia de innovación y diseño desde 1919.
-        </p>
-
-        <div class="verification-badge">
-          <div class="badge-check">✓</div>
-          <div class="badge-label">Verificado</div>
-        </div>
-      </header>
-
-      <!-- CUERPO -->
-      <div class="cert-body">
-        <section>
-          <div class="section-header">
-            <div class="section-icon"></div>
-            <h3 class="section-title">Información del Producto</h3>
-          </div>
-
-          <div class="data-grid">
-            <div class="data-item">
-              <div class="data-label">Categoría</div>
-              <div class="data-value">Refrigerador</div>
-            </div>
-            <div class="data-item">
-              <div class="data-label">Modelo</div>
-              <div class="data-value">DF42X</div>
-            </div>
-            <div class="data-item">
-              <div class="data-label">Marca</div>
-              <div class="data-value">Electrolux</div>
-            </div>
-            <div class="data-item">
-              <div class="data-label">País de Origen</div>
-              <div class="data-value">Brasil</div>
-            </div>
-            <div class="data-item">
-              <div class="data-label">Año de Fabricación</div>
-              <div class="data-value">2024</div>
-            </div>
-            <div class="data-item">
-              <div class="data-label">Color / Acabado</div>
-              <div class="data-value">Acero Inoxidable</div>
-            </div>
-          </div>
-        </section>
+    <header class="cert-header">
+      <div class="brand-header">
+        <img src="Electrolu_logo_PNG3.png" alt="Electrolux" class="electrolux-logo">
       </div>
 
-      <!-- DESTACADO -->
-      <section class="highlight-section">
-        <div class="section-header">
-          <div class="section-icon"></div>
-          <h3 class="section-title">Certificaciones y Garantía</h3>
-        </div>
+      <div class="cert-type">Documento Oficial</div>
+      <h1 class="cert-title">Certificado de Autenticidad</h1>
+      <p class="cert-subtitle">
+        Este documento certifica la autenticidad y garantía del producto Electrolux adquirido,
+        respaldado por nuestra herencia de innovación escandinava desde 1919.
+      </p>
 
-        <div class="data-grid">
-          <div class="data-item">
-            <div class="data-label">Certificación SEC</div>
-            <div class="data-value">E-013-01-0000000000000009434</div>
-          </div>
-          <div class="data-item">
-            <div class="data-label">Folio SEC</div>
-            <div class="data-value">295433</div>
-          </div>
-          <div class="data-item">
-            <div class="data-label">Fecha de Certificación</div>
-            <div class="data-value">28 de Febrero, 2024</div>
-          </div>
-          <div class="data-item">
-            <div class="data-label">Eficiencia Energética</div>
-            <div class="data-value">Clase A+++</div>
-          </div>
-          <div class="data-item">
-            <div class="data-label">Garantía Oficial</div>
-            <div class="data-value">12 Meses</div>
-          </div>
-          <div class="data-item">
-            <div class="data-label">Organismo Emisor</div>
-            <div class="data-value">Electrolux (Referencia)</div>
-          </div>
-        </div>
+      <div class="verified-badge">
+        <span>✓</span>
+        <small>VERIFICADO</small>
+      </div>
+    </header>
 
-        <div class="serial-container">
-          <div class="serial-label">Número de Serie del Producto</div>
-          <div class="serial-number">ELX-2024-295433</div>
-        </div>
+    <section class="cert-body">
+      <div class="section-title">Información del Producto</div>
 
-        <div class="qr-container">
-          <div class="qr-code">
-            <div class="qr-pattern"></div>
-          </div>
-          <div class="qr-text">
-            <div class="qr-title">Verificación Digital</div>
-            <div class="qr-description">
-              Escanea este código QR para verificar la autenticidad del producto en el sistema de validación en línea
-              y acceder al manual digital completo del usuario.
-            </div>
-          </div>
+      <div class="grid">
+        <div class="item">
+          <label>Marca</label>
+          <div>Electrolux</div>
         </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="cert-footer">
-        <div class="footer-logo">ELECTROLUX</div>
-        <p class="footer-text">
-          Este certificado confirma la autenticidad del producto y su respaldo de garantía.
-          Conserve este documento para soporte y validación.
-        </p>
-        <div class="footer-contact">
-          www.electrolux.com | <a href="mailto:soporte@electrolux.com">soporte@electrolux.com</a>
+        <div class="item">
+          <label>Modelo</label>
+          <div>DF42X</div>
         </div>
-      </footer>
+        <div class="item">
+          <label>Categoría</label>
+          <div>Refrigerador</div>
+        </div>
+        <div class="item">
+          <label>País de Fabricación</label>
+          <div>Brasil</div>
+        </div>
+        <div class="item">
+          <label>Año de Fabricación</label>
+          <div>2024</div>
+        </div>
+        <div class="item">
+          <label>Color / Acabado</label>
+          <div>Acero Inoxidable</div>
+        </div>
+      </div>
+    </section>
 
-    </article>
-  </div>
+    <section class="highlight">
+      <div class="section-title">Certificación y Garantía</div>
+
+      <div class="grid">
+        <div class="item">
+          <label>Certificación SEC</label>
+          <div>E-013-01-0000000000000009434</div>
+        </div>
+        <div class="item">
+          <label>Folio SEC</label>
+          <div>295433</div>
+        </div>
+        <div class="item">
+          <label>Fecha de Certificación</label>
+          <div>28 de Febrero, 2024</div>
+        </div>
+        <div class="item">
+          <label>Eficiencia Energética</label>
+          <div>Clase A+++</div>
+        </div>
+      </div>
+
+      <div class="serial">
+        <small>Número de Serie</small>
+        <strong>ELX-2024-295433</strong>
+      </div>
+    </section>
+
+    <footer class="cert-footer">
+      <p>
+        Este certificado confirma la autenticidad del producto y su respaldo de garantía oficial.
+        Conserve este documento para validación y soporte técnico.
+      </p>
+      <p>
+        www.electrolux.com ·
+        <a href="mailto:soporte@electrolux.com">soporte@electrolux.com</a>
+      </p>
+    </footer>
+
+  </article>
 </body>
 </html>
