@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Certificado de Autenticidad y Garantía - Electrolux">
+  <title>Certificado de Autenticidad - Electrolux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f8f9fa;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 15px;
+    }
+    
+    .certificate-wrapper {
+      width: 100%;
+      max-width: 950px;
+    }
+    
+    .certificate {
+      background: #ffffff;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Header con colores oficiales Electrolux */
+    .cert-header {
+      background: #2c5aa0;
+      padding: 50px 50px 45px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cert-header::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 400px;
+      height: 100%;
+      background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.03) 100%);
+      pointer-events: none;
+    }
+    
+    /* Logo Electrolux + Símbolo */
+    .brand-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 35px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Símbolo icónico de Electrolux (1962) */
+    .electrolux-symbol {
+      width: 70px;
+      height: 70px;
+      background: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      flex-shrink: 0;
+    }
+    
+    .symbol-star {
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-bottom: 31px solid #2c5aa0;
+      position: relative;
+    }
+    
+    .symbol-star::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 18px solid transparent;
+      border-right: 18px solid transparent;
+      border-top: 31px solid #2c5aa0;
+      position: absolute;
+      top: 6px;
+      left: -18px;
+    }
+    
+    /* Logotipo Electrolux */
+    .brand-logo {
+      color: #ffffff;
+      font-size: 48px;
+      font-weight: 300;
+      letter-spacing: 12px;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    .cert-type {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 500;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cert-main-title {
+      text-align: center;
+      color: #ffffff;
+      font-size: 36px;
+      font-weight: 300;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .cert-subtitle {
+      text-align: center;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.6;
+      max-width: 650px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    /* Badge verificado */
+    .verification-badge {
+      position: absolute;
+      top: 40px;
+      right: 50px;
+      width: 90px;
+      height: 90px;
+      background: #10b981;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+      color: #fff;
+      border: 4px solid rgba(255, 255, 255, 0.2);
+      z-index: 2;
+    }
+    
+    .badge-check {
+      font-size: 36px;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    
+    .badge-label {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+    
+    /* Secciones del certificado */
+    .cert-body {
+      padding: 45px 50px;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 28px;
+      padding-bottom: 14px;
+      border-bottom: 2px solid #e9ecef;
+    }
+    
+    .section-icon {
+      width: 6px;
+      height: 28px;
+      background: #2c5aa0;
+      border-radius: 3px;
+    }
+    
+    .section-title {
+      font-size: 13px;
+      color: #2c5aa0;
+      text-transform: uppercase;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+    }
+    
+    /* Grid de datos */
+    .data-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px 35px;
+      margin-bottom: 40px;
+    }
+    
+    .data-item {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    
+    .data-label {
+      font-size: 11px;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 600;
+    }
+    
+    .data-value {
+      font-size: 15px;
+      color: #212529;
+      font-weight: 500;
+      padding: 11px 16px;
+      background: #f8f9fa;
+      border-left: 3px solid #2c5aa0;
+      border-radius: 0 4px 4px 0;
+    }
+    
+    /* Sección destacada */
+    .highlight-section {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #f8f9fa 100%);
+      padding: 40px 50px;
+      margin: 0 -50px;
+      border-top: 1px solid #dee2e6;
+      border-bottom: 1px solid #dee2e6;
+    }
+    
+    /* Serial Number */
+    .serial-container {
+      background: #ffffff;
+      border: 2px dashed #2c5aa0;
+      padding: 28px;
+      text-align: center;
+      border-radius: 8px;
+      margin-top: 35px;
+    }
+    
+    .serial-label {
+      font-size: 11px;
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      font-weight: 600;
+    }
+    
+    .serial-number {
+      font-size: 26px;
+      color: #2c5aa0;
+      font-weight: 700;
+      letter-spacing: 4px;
+      font-family: 'Courier New', monospace;
+    }
+    
+    /* QR Section */
+    .qr-container {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      margin-top: 35px;
+      padding: 25px;
+      background: #ffffff;
+      border-radius: 8px;
+      border: 1px solid #e9ecef;
+    }
+    
+    .qr-code {
+      width: 110px;
+      height: 110px;
+      background: #f8f9fa;
+      border: 2px solid #dee2e6;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .qr-pattern {
+      width: 90px;
+      height: 90px;
+      background-image: 
+        linear-gradient(0deg, #dee2e6 1px, transparent 1px),
+        linear-gradient(90deg, #dee2e6 1px, transparent 1px);
+      background-size: 10px 10px;
+    }
+    
+    .qr-text {
+      flex: 1;
+    }
+    
+    .qr-title {
+      font-size: 14px;
+      color: #2c5aa0;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+    
+    .qr-description {
+      font-size: 13px;
+      color: #6c757d;
+      line-height: 1.6;
+    }
+    
+    /* Footer */
+    .cert-footer {
+      background: #2c5aa0;
+      color: #ffffff;
+      padding: 40px 50px;
+      text-align: center;
+    }
+    
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+    
+    .footer-symbol {
+      width: 50px;
+      height: 50px;
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .footer-symbol-star {
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-bottom: 21px solid #ffffff;
+      position: relative;
+    }
+    
+    .footer-symbol-star::before {
+      content: '';
+      width: 0;
+      height: 0;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      border-top: 21px solid #ffffff;
+      position: absolute;
+      top: 4px;
+      left: -12px;
+    }
+    
+    .footer-logo {
+      font-size: 32px;
+      font-weight: 300;
+      letter-spacing: 8px;
+    }
+    
+    .footer-text {
+      font-size: 13px;
+      line-height: 1.8;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto 20px;
+    }
+    
+    .footer-contact {
+      font-size: 12px;
+      opacity: 0.8;
+      margin-top: 18px;
+    }
+    
+    .footer-contact a {
+      color: #ffffff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+      transition: border-color 0.3s;
+    }
+    
+    .footer-contact a:hover {
+      border-bottom-color: #ffffff;
+    }
+    
+    /* RESPONSIVE - TABLETS */
+    @media (max-width: 768px) {
+      body {
+        padding: 20px 10px;
+      }
+      
+      .cert-header {
+        padding: 40px 30px 35px;
+      }
+      
+      .brand-logo {
+        font-size: 36px;
+        letter-spacing: 8px;
+      }
+      
+      .electrolux-symbol {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .cert-main-title {
+        font-size: 28px;
+      }
+      
+      .verification-badge {
+        width: 75px;
+        height: 75px;
+        top: 35px;
+        right: 30px;
+      }
+      
+      .badge-check {
+        font-size: 30px;
+      }
+      
+      .cert-body {
+        padding: 35px 30px;
+      }
+      
+      .highlight-section {
+        padding: 35px 30px;
+        margin: 0 -30px;
+      }
+      
+      .cert-footer {
+        padding: 35px 30px;
+      }
+      
+      .data-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .qr-container {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+    
+    /* RESPONSIVE - MÓVILES */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px 0;
+      }
+      
+      .cert-header {
+        padding: 30px 20px 28px;
+      }
+      
+      .brand-header {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      .brand-logo {
+        font-size: 28px;
+        letter-spacing: 6px;
+      }
+      
+      .electrolux-symbol {
+        width: 55px;
+        height: 55px;
+      }
+      
+      .cert-type {
+        font-size: 11px;
+      }
+      
+      .cert-main-title {
+        font-size: 24px;
+      }
+      
+      .cert-subtitle {
+        font-size: 14px;
+      }
+      
+      .verification-badge {
+        width: 65px;
+        height: 65px;
+        top: 25px;
+        right: 20px;
+        border-width: 3px;
+      }
+      
+      .badge-check {
+        font-size: 26px;
+      }
+      
+      .badge-label {
+        font-size: 8px;
+      }
+      
+      .cert-body {
+        padding: 28px 20px;
+      }
+      
+      .highlight-section {
+        padding: 28px 20px;
+        margin: 0 -20px;
+      }
+      
+      .cert-footer {
+        padding: 28px 20px;
+      }
+      
+      .section-title {
+        font-size: 11px;
+      }
+      
+      .data-label {
+        font-size: 10px;
+      }
+      
+      .data-value {
+        font-size: 14px;
+        padding: 10px 14px;
+      }
+      
+      .serial-number {
+        font-size: 20px;
+        letter-spacing: 2px;
+      }
+      
+      .footer-logo {
+        font-size: 24px;
+        letter-spacing: 6px;
+      }
+    }
+    
+    /* MÓVILES MUY PEQUEÑOS */
+    @media (max-width: 360px) {
+      .cert-header {
+        padding: 25px 15px 25px;
+      }
+      
+      .brand-logo {
+        font-size: 24px;
+        letter-spacing: 4px;
+      }
+      
+      .electrolux-symbol {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .cert-main-title {
+        font-size: 20px;
+      }
+      
+      .verification-badge {
+        width: 60px;
+        height: 60px;
+        top: 20px;
+        right: 15px;
+      }
+      
+      .badge-check {
+        font-size: 24px;
+      }
+      
+      .cert-body {
+        padding: 25px 15px;
+      }
+      
+      .highlight-section {
+        padding: 25px 15px;
+        margin: 0 -15px;
+      }
+      
+      .cert-footer {
+        padding: 25px 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="certificate-wrapper">
+    <article class="certificate">
+      
+      <!-- HEADER -->
+      <header class="cert-header">
+        <div class="brand-header">
+          <!-- Símbolo icónico Electrolux -->
+          <div class="electrolux-symbol">
+            <div class="symbol-star"></div>
+          </div>
+          
+          <!-- Logotipo Electrolux -->
+          <h1 class="brand-logo">ELECTROLUX</h1>
+        </div>
+        
+        <p class="cert-type">Documento Oficial</p>
+        <h2 class="cert-main-title">Certificado de Autenticidad</h2>
+        <p class="cert-subtitle">Este documento certifica la autenticidad y garantía del producto Electrolux adquirido, respaldado por nuestra herencia de innovación escandinava desde 1919</p>
+        
+        <!-- Badge verificado -->
+        <div class="verification-badge">
+          <div class="badge-check">✓</div>
+          <div class="badge-label">Verificado</div>
+        </div>
+      </header>
+      
+      <!-- CUERPO DEL CERTIFICADO -->
+      <div class="cert-body">
+        <!-- Información del Producto -->
+        <section>
+          <div class="section-header">
+            <div class="section-icon"></div>
+            <h3 class="section-title">Información del Producto</h3>
+          </div>
+          
+          <div class="data-grid">
+            <div class="data-item">
+              <div class="data-label">Categoría</div>
+              <div class="data-value">Refrigerador</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Modelo</div>
+              <div class="data-value">DF42X</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Marca</div>
+              <div class="data-value">Electrolux</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">País de Origen</div>
+              <div class="data-value">Brasil</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Año de Fabricación</div>
+              <div class="data-value">2024</div>
+            </div>
+            <div class="data-item">
+              <div class="data-label">Color/Acabado</div>
+              <div class="data-value">Acero Inoxidable</div>
+            </div>
+          </div>
+        </section>
+      </div>
+      
+      <!-- SECCIÓN DESTACADA -->
+      <section class="highlight-section">
+        <div class="section-header">
+          <div class="section-icon"></div>
+          <h3 class="section-title">Certificaciones y Garantía</h3>
+        </div>
+        
+        <div class="data-grid">
+          <div class="data-item">
+            <div class="data-label">Certificación SEC</div>
+            <div class="data-value">E-013-01-0000000000000009434</div>
+          </div>
+          <div class="data-item">
+            <div class="data-label">Folio SEC</div>
+            <div class="data-value">295433</div>
+          </div>
+          <div class="data-item">
+            <div class="data-label">Fecha de Certificación</div>
+            <div class="data-value">28 de Febrero, 2024</div>
+          </div>
+          <div class="data-item">
+            <div class="data-label">Eficiencia Energética</div>
+            <div class="data-value">Clase A+++</div>
+          </div>
+          <div class="data-item">
+            <div class="data-label">Garantía Oficial</div>
+            <div class="data-value">12 Meses</div>
+          </div>
+          <div class="data-item">
+            <div class="data-label">Organismo Emisor</div>
+            <div class="data-value">Electronics S.A.</div>
+          </div>
+        </div>
+        
+        <!-- Número de Serie -->
+        <div class="serial-container">
+          <div class="serial-label">Número de Serie del Producto</div>
+          <div class="serial-number">ELX-2024-295433</div>
+        </div>
+        
+        <!-- QR Code -->
+        <div class="qr-container">
+          <div class="qr-code">
+            <div class="qr-pattern"></div>
+          </div>
+          <div class="qr-text">
+            <div class="qr-title">Verificación Digital</div>
+            <div class="qr-description">Escanea este código QR para verificar la autenticidad del producto en nuestro sistema de validación en línea y acceder al manual digital completo del usuario.</div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- FOOTER -->
+      <footer class="cert-footer">
+        <div class="footer-brand">
+          <div class="footer-symbol">
+            <div class="footer-symbol-star"></div>
+          </div>
+          <div class="footer-logo">ELECTROLUX</div>
+        </div>
+        
+        <p class="footer-text">
+          Desde 1919, Electrolux se compromete a ofrecer productos de la más alta calidad con innovación y diseño pensado para mejorar su vida diaria. Este certificado garantiza que su producto es auténtico y cuenta con el respaldo de nuestra garantía oficial y servicio técnico especializado.
+        </p>
+        
+        <div class="footer-contact">
+          www.electrolux.com | Atención al Cliente: +800 ELECTROLUX | <a href="mailto:soporte@electrolux.com">soporte@electrolux.com</a>
+        </div>
+      </footer>
+      
+    </article>
+  </div>
+</body>
+</html>
